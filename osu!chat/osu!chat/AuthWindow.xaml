@@ -1,0 +1,38 @@
+﻿<Window x:Class="osu_chat.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:osu_chat"
+        mc:Ignorable="d"
+        Title="osu!chat" Height="282" Width="438" Icon="osu!icon.ico" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closed="Window_Closed" Background="Black">
+    <Grid x:Name="gr" Background="White">
+
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,65,0,0" TextWrapping="Wrap" Text="Please login to proceed" VerticalAlignment="Top" Height="24" Width="198" FontFamily="/osu!chat;component/Resources/#Exo" FontSize="18" Foreground="#FF555555"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,222,0,0" TextWrapping="Wrap" Text="Forgotten your password?" VerticalAlignment="Top" FontFamily="/osu!chat;component/Resources/#Exo"  FontSize="13.333"  Height="17" Foreground="#FF2299BB" Cursor="Hand" MouseDown="textBlock1_KeyDown">
+            <TextBlock.Background>
+                <ImageBrush/>
+            </TextBlock.Background>
+        </TextBlock>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="32" Margin="10,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" Template="{DynamicResource TextBoxBaseStyle}" Foreground="#FF999999" FontFamily="/osu!chat;component/Resources/#Exo" FontSize="14" VerticalContentAlignment="Center" Padding="10,1,1,1"/>
+        <Button x:Name="button" Height="69" Margin="320,98,10,0" VerticalAlignment="Top" Style="{DynamicResource LoginButtonStyle}" Click="button_Click">
+            <Button.Effect>
+                <DropShadowEffect Direction="270" ShadowDepth="2" BlurRadius="10" Color="#FFA1A1A1"/>
+            </Button.Effect>
+        </Button>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="295" Template="{DynamicResource PasswordBoxControlStyle}" Height="32"  Foreground="#FF999999" FontFamily="/osu!chat;component/Resources/#Exo" FontSize="14" VerticalContentAlignment="Center" Padding="10,1,1,1"/>
+        <Border BorderThickness="0" Height="60" VerticalAlignment="Top">
+            <Border.Background>
+                <ImageBrush ImageSource="Resources/login-box.jpg"/>
+            </Border.Background>
+            <Label x:Name="label" Content="Login" FontFamily="/osu!chat;component/Resources/#Exo" FontSize="24" Foreground="White" Background="{x:Null}" VerticalContentAlignment="Bottom">
+                <Label.Effect>
+                    <DropShadowEffect Color="#99000000" ShadowDepth="2" BlurRadius="2"/>
+                </Label.Effect>
+            </Label>
+        </Border>
+        <CheckBox x:Name="checkBox" Content="Remember login" Height="19" Margin="15,174,10,0" VerticalAlignment="Top" Padding="22,0,0,0"/>
+        <CheckBox x:Name="checkBox_Copy" Content="Remember password" Height="19" Margin="15,198,10,0" VerticalAlignment="Top" Padding="22,0,0,0"/>
+
+    </Grid>
+</Window>
